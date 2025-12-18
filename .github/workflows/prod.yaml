@@ -28,7 +28,6 @@ permissions:
   contents: read
   packages: read
   security-events: read
-  id-token: read
 
 jobs:
   docker-opts:
