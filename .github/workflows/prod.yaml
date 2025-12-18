@@ -9,11 +9,6 @@ on:
       - main
     types: [closed]
   workflow_dispatch:
-    inputs:
-      logLevel:
-        description: "Log level"
-        required: true
-        default: "debug"
 
 env:
   APP_NAME: assistant-us-prod
@@ -32,13 +27,12 @@ permissions:
 jobs:
   docker-opts:
     if: |
-      github.event_name == 'workflow_dispatch' ||
-      (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+      github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.base.ref || github.ref }}
+          ref: ${{ github.event.pull_request.base.ref }}
 
       - name: Get tag
         shell: bash
