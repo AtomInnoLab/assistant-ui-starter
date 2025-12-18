@@ -4,7 +4,7 @@ import { streamText, convertToModelMessages, type UIMessage } from "ai";
 const doubao = createOpenAI({
   baseURL: "https://ark.cn-beijing.volces.com/api/v3",
   apiKey: process.env.DOUBAO_API_KEY || "",
-});
+}).chat;
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
