@@ -46,28 +46,28 @@ export function ThreadListSidebar({
         <ThreadList />
       </SidebarContent>
       <SidebarRail />
-      <SidebarFooter className="aui-sidebar-footer border-t">
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
-              <Link
-                href="#"
-                target="_blank"
-              >
-                <div className="aui-sidebar-footer-icon-wrapper flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                  <Github className="aui-sidebar-footer-icon size-4" />
-                </div>
-                <div className="aui-sidebar-footer-heading flex flex-col gap-0.5 leading-none">
-                  <span className="aui-sidebar-footer-title font-semibold">
-                    GitHub
-                  </span>
-                  <span>访问仓库</span>
-                </div>
-              </Link>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-      </SidebarFooter>
+      {/*<SidebarFooter className="aui-sidebar-footer border-t">*/}
+        {/*<SidebarMenu>*/}
+        {/*  <SidebarMenuItem>*/}
+        {/*    <SidebarMenuButton size="lg" asChild>*/}
+        {/*      <Link*/}
+        {/*        href="#"*/}
+        {/*        target="_blank"*/}
+        {/*      >*/}
+        {/*        <div className="aui-sidebar-footer-icon-wrapper flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">*/}
+        {/*          <Github className="aui-sidebar-footer-icon size-4" />*/}
+        {/*        </div>*/}
+        {/*        <div className="aui-sidebar-footer-heading flex flex-col gap-0.5 leading-none">*/}
+        {/*          <span className="aui-sidebar-footer-title font-semibold">*/}
+        {/*            GitHub*/}
+        {/*          </span>*/}
+        {/*          <span>访问仓库</span>*/}
+        {/*        </div>*/}
+        {/*      </Link>*/}
+        {/*    </SidebarMenuButton>*/}
+        {/*  </SidebarMenuItem>*/}
+        {/*</SidebarMenu>*/}
+      {/*</SidebarFooter>*/}
     </Sidebar>
   );
 }
