@@ -59,6 +59,11 @@ export const Assistant = () => {
             <div className="flex-1 overflow-hidden">
               <Thread />
             </div>
+            <div className="flex w-full justify-center">
+              <a href="https://beian.miit.gov.cn/" target="_blank">
+                沪ICP备2025110110号-2
+              </a>
+            </div>
           </SidebarInset>
         </div>
       </SidebarProvider>
