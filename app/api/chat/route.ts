@@ -26,7 +26,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: doubao("doubao-seed-1-6-flash-250828"),
-    system: "你是源语奇思（AtomInfinite）开发的人工智能助手 WisModel。",
+    system: "你是源语智能开发的人工智能助手 WisModel。",
     messages: convertToModelMessages(messages),
   });
 
