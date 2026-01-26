@@ -59,6 +59,9 @@ export const Assistant = () => {
             <div className="flex-1 overflow-hidden">
               <Thread />
             </div>
+            <div className="w-full text-center text-xs text-muted-foreground py-2">
+              内容由 AI 生成，仅供参考，请注意甄别
+            </div>
             <div className="flex w-full justify-center">
               <a href="https://beian.miit.gov.cn/" target="_blank">
                 沪ICP备2025110110号-2
