@@ -25,6 +25,7 @@ permissions:
   contents: read
   packages: read
   security-events: read
+  actions: read
 
 jobs:
   docker-opts:
@@ -51,11 +52,17 @@ jobs:
             -p ${{ env.REPO_PASSWORD }} \
             ${{ env.REPO_URL }}
 
-      - name: Build and push Docker image
-        shell: bash
-        run: |
-          docker build -t ${{ env.REPO_URL }}/${{ env.REPO_DIR }}/${{ env.APP_NAME }}:${{ env.DOCKER_TAG }} .
-          docker push ${{ env.REPO_URL }}/${{ env.REPO_DIR }}/${{ env.APP_NAME }}:${{ env.DOCKER_TAG }}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      - name: Build and push image (with layer cache)
+        uses: docker/build-push-action@v7
+        with:
+          context: .
+          push: true
+          tags: ${{ env.REPO_URL }}/${{ env.REPO_DIR }}/${{ env.APP_NAME }}:${{ env.DOCKER_TAG }}
+          cache-from: type=gha,scope=assistant-us-dev
+          cache-to: type=gha,mode=min,scope=assistant-us-dev,ignore-error=true
 
       - name: Download saectl
         shell: bash
